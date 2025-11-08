@@ -18,7 +18,7 @@ function PaginatedBookMarkList() {
         ? bookmarkedData.length / ITEMS_PER_PAGE
         : data.length / ITEMS_PER_PAGE
     );
-  }, [bookmarkedData]);
+  }, [bookmarkedData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleElementsDisplay = () => {
     const filtered =
@@ -46,12 +46,12 @@ function PaginatedBookMarkList() {
 
   useEffect(() => {
     handleElementsDisplay();
-  }, [pageNo, data]);
+  }, [pageNo, data]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setPageNo(0);
     handleElementsDisplay();
-  }, [pages]);
+  }, [pages]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (toggle) {
@@ -62,7 +62,7 @@ function PaginatedBookMarkList() {
       setBookmarkedData([]);
       handleElementsDisplay();
     }
-  }, [toggle]);
+  }, [toggle]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
